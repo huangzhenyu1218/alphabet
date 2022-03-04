@@ -32,7 +32,7 @@
                             AggregationAlphabetTest.java
                             UnRepeatAlphabetTest.java
 
-17 directories, 17 files
+12 directories, 9 files
 
 ```
 
