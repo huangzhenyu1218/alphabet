@@ -1,30 +1,48 @@
-Run Tips:  
-input you choice number:  
-1:remove 3 or more consecutive characters are identical from your input string;  
-2:replace the consecutively identical characters with character that comes before it alphabetically.  
-else:quit.
-------------------------
-usage:  
-**1 (input number "1")**  
-Input (for eaxample "aabcccbbad"):  
-**aabcccbbad**  
-Output:  
--> aabbbad  
--> aaad  
--> d  
-input you choice number:  
-1:remove 3 or more consecutive characters are identical from your input string;  
-2:replace the consecutively identical characters with character that comes before it alphabetically. else:quit.  
-**2 (input number "2")**  
-Input (for eaxample "abcccbad"):  
-**abcccbad**  
-Output:  
--> abbbad, ccc is replaced by b  
--> aaad, bbb is replaced by a  
--> d  
-input you choice number:  
-1:remove 3 or more consecutive characters are identical from your input string;  
-2:replace the consecutively identical characters with character that comes before it alphabetically. else:quit.  
-q(Input "q")
+# 项目说明文档
+使用策略模式,AggregationAlphabet.java聚合策略,UnRepeatAlphabet.java去重策略  
+测试用例AggregationAlphabetTest.java、UnRepeatAlphabetTest.java  
+使用正则表达式提取字符串  
+使用jdk8  
 
-Process finished with exit code 0
+<!-- ![项目文件树](src/demo.png) -->
+### 项目文件树
+```
+.
+│  pom.xml
+│  README.md
+│
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─io
+    │  │      └─github
+    │  │          └─alphabet
+    │  │                  AggregationAlphabet.java
+    │  │                  Alphabet.java
+    │  │                  AlphabetContext.java
+    │  │                  Application.java
+    │  │                  UnRepeatAlphabet.java
+    │  │
+    │  └─resources
+    └─test
+        └─java
+            └─io
+                └─github
+                    └─alphabet
+                            AggregationAlphabetTest.java
+                            UnRepeatAlphabetTest.java
+
+17 directories, 17 files
+
+```
+
+### 项目启动说明
+
+```
+在IntelliJ Idea Run/Debug： 
+Application.java
+AggregationAlphabetTest.java
+UnRepeatAlphabetTest.java
+```
+### 版本更新说明
+- 改为策略模式

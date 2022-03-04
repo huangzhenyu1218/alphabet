@@ -10,16 +10,17 @@ import java.util.regex.Pattern;
  * @author 13570326865@139.com
  * @version 1.0
  */
-public class UnRepeatAlphabetFactory implements AlphabetFactory {
+public class UnRepeatAlphabet implements Alphabet {
     @Override
-    public void createAlphabet(String alphabet) {
+    public String createAlphabet(String alphabet) {
         String newAlphabet = Optional.ofNullable(alphabet).orElse("");
         Pattern pattern = Pattern.compile("(.)\\1{2,}");
         newAlphabet = deleteRepeatLetters(pattern, newAlphabet);
         System.out.println("-> " + newAlphabet);
         if (pattern.matcher(newAlphabet).find()) {
-            createAlphabet(newAlphabet);
+            return createAlphabet(newAlphabet);
         }
+        return newAlphabet;
     }
 
     private String deleteRepeatLetters(Pattern pattern, String newAlphabet) {
