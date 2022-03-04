@@ -12,6 +12,7 @@ public class Application {
         Scanner scan = new Scanner(System.in);
         String input = "";
         boolean isContinue = true;
+        AlphabetContext alphabetContext=new AlphabetContext();
         while (isContinue) {
             System.out.println(tips1);
             if (scan.hasNext()) {
@@ -20,20 +21,19 @@ public class Application {
                     case "1":
                         System.out.println("Input (for eaxample \"aabcccbbad\"):");
                         input = scan.next();
-                        AlphabetFactory unRepeatAlphabetFactory = new UnRepeatAlphabetFactory();
                         System.out.println("Output:");
-                        unRepeatAlphabetFactory.createAlphabet(input);
+                        alphabetContext.setAlphabet(new UnRepeatAlphabet());
                         break;
                     case "2":
                         System.out.println("Input (for eaxample \"abcccbad\"):");
                         input = scan.next();
-                        AlphabetFactory aggregationAlphabetFactory = new AggregationAlphabetFactory();
                         System.out.println("Output:");
-                        aggregationAlphabetFactory.createAlphabet(input);
+                        alphabetContext.setAlphabet(new AggregationAlphabet());
                         break;
                     default:
                         isContinue = false;
                 }
+                alphabetContext.alphabetFormat(input);
             }
         }
 

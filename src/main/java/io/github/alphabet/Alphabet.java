@@ -6,11 +6,11 @@ package io.github.alphabet;
  * @author 13570326865@139.com
  * @version 1.0
  */
-public interface AlphabetFactory {
+public interface Alphabet {
 
     /**
      * 生产手机
      */
-    void createAlphabet(String alphabet);
+    String createAlphabet(String alphabet);
 
 }
